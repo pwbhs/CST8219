@@ -30,7 +30,7 @@ public:
 };
 
 int main() {
-	Vehicle myVehicle();
+	Vehicle myVehicle(4);
 	cout << "I made a vehicle!" << endl;
 	return 0 ;
 }

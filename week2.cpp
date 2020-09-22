@@ -30,6 +30,7 @@ public:
 };
 
 int main() {
-	cout << "Hello CMake" << endl;
+	Vehicle myVehicle();
+	cout << "I made a vehicle!" << endl;
 	return 0 ;
 }

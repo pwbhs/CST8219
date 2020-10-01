@@ -29,8 +29,42 @@ public:
 	}
 };
 
-int main() {
-	Vehicle myVehicle(4, 2);
-	cout << "I made a vehicle!" << endl;
+int main(int argc, char **argv) {
+	Vehicle* pVehicle = NULL;
+	char temp;
+	int d, w;
+	Vehicle veh1;
+	Vehicle veh2(4);
+	Vehicle veh3(4, 2);
+
+	do
+	{	
+		
+			delete pVehicle;
+		
+		cout << "enter number of doors" << endl;
+		while (!(cin >> d) || d <= 0) {
+			cout << "Error! Please type in a number" << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		cout << "enter number of wheels" << endl;
+		while (!(cin >> w) || w <= 0) {
+			cout << "Error! Please type in a number" << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		pVehicle = new Vehicle(w, d);
+		cout << "To create a new vehicle enter any character. Otherwise, enter 'q' to quit" << endl;
+		cin >> temp;
+		
+	} while ( temp != 'q' );
+	delete pVehicle;
+
+	cout << "vehicle takes " << sizeof(veh1) << endl;
+	cout << "vehicle takes " << sizeof(veh2) << endl;
+	cout << "vehicle takes " << sizeof(veh3) << endl;
+	cout << "i made a vehicle!" << endl;
+
 	return 0 ;
 }

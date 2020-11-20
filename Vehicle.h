@@ -23,13 +23,7 @@ public:
 	int getNumDoors(void);
 	void setNumWheels(int);
 	void setNumDoors(int);
-	Vehicle& Vehicle::operator= (const Vehicle&);
-	bool Vehicle::operator==(const Vehicle&);
-	bool Vehicle::operator!=(const Vehicle&);
-	Vehicle operator++();
-	Vehicle operator++(int i);
-	Vehicle operator--();
-	Vehicle operator--(int i);
+	
 	friend ostream& operator<<(ostream&, const Vehicle&);
 
 

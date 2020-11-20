@@ -1,0 +1,26 @@
+﻿
+#include "HybridVehicle.h";
+#include<iostream>
+
+using namespace std;
+
+Vehicle* testVehicle(Vehicle* pVehicle, const char* vehicleName);
+
+Vehicle* testVehicle(Vehicle* pVehicle, const char* vehicleName) {
+	cout << vehicleName << "'s range is: " << pVehicle->calculateRange() << endl;
+	pVehicle->drive(150);
+	cout << vehicleName << "'s energy left is " << pVehicle->percentEnergyRemaining() << endl;
+	cout << vehicleName << "'s range is now " << pVehicle->calculateRange() << endl;
+
+	return pVehicle;
+}
+
+
+int main(int argc, char **argv) {
+	delete testVehicle(new GasolineVehicle(50, 7.1f), "Corolla");
+	delete testVehicle( (GasolineVehicle*) new HybridVehicle(42.0f, 4.3f, 8.8f, 22.0f), "Prius");
+	delete testVehicle(new ElectricVehicle(75, 16), "Tesla 3");
+	
+	return 0;
+}
+
